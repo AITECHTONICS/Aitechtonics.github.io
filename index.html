@@ -13,6 +13,9 @@
             margin: 0;
             padding: 0;
             background-color: #f7f7f7; /* Light background */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Ensure body fills the viewport height */
         }
 
         header {
@@ -21,6 +24,11 @@
             text-align: center;
             padding: 1em;
             font-size: 2em; /* Larger header font size */
+        }
+
+        main {
+            flex: 1; /* Ensure main section takes up remaining vertical space */
+            overflow-y: auto; /* Allow main section to scroll */
         }
 
         section {
@@ -57,8 +65,6 @@
             color: #fff;
             text-align: center;
             padding: 1em;
-            /* position: fixed; */ /* Remove or comment out this line */
-            bottom: 0;
             width: 100%;
             font-size: 0.8em;
         }
@@ -119,37 +125,38 @@
     <header>
         <h1 style="font-size: 1.0em;">AI-TECHTONICS</h1>
     </header>
+    
 
-    <!-- Robot Image and Welcome Message Container -->
-    <div id="robot-container">
-        <!-- Robot Image -->
-        <img id="robot-img" src="robot.png" alt="Cute Robot">
-        <!-- Welcome Message -->
-        <p class="welcome-message">Welcome!</p>
-    </div>
+    <!-- Main content area -->
+    <main>
 
-    <section style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 18px;">
-        <p>Welcome! Here at AI-TECHTONICS, we're dedicated to enhancing your productivity through the power of AI. Embrace it to elevate your efficiency. Confused about how to get started?</p>
-    </section>
+        <!-- Robot Image and Welcome Message Container -->
+        <div id="robot-container">
+            <!-- Robot Image -->
+            <img id="robot-img" src="robot.png" alt="Cute Robot">
+            <!-- Welcome Message -->
+            <p class="welcome-message">Welcome!</p>
+        </div>
 
-    <section>
-        <a href="socialMedia.html">
-            <h2>Our Centralized Social Media Links</h2>
-        </a>
-    </section>
+        <section style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 18px;">
+            <p>Welcome! Here at AI-TECHTONICS, we're dedicated to enhancing your productivity through the power of AI. Embrace it to elevate your efficiency. Confused about how to get started?</p>
+        </section>
 
-    <section>
-        <a href="aiTools.html">
-            <h2>AI-Infused Tools</h2>
-        </a>
-    </section>
+        <section>
+            <a href="socialMedia.html"><h2>Our Centralized Social Media Links</h2></a>
+        </section>
 
-    <section>
-        <a href="aiPrompts.html">
-            <h2>Engaging AI Prompts</h2>
-        </a>
-    </section>
+        <section>
+            <a href="aiTools.html"><h2>AI-Infused Tools</h2></a>
+        </section>
 
+        <section>
+            <a href="aiPrompts.html"><h2>Engaging AI Prompts</h2></a>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
     <footer>
         <p>© 2024 AI-TECHTONICS. All rights reserved.</p>
     </footer>
