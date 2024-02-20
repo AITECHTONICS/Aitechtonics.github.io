@@ -11,7 +11,7 @@
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #64c9bd; /* Gradient background */
+            background-color: #64c9bd;
         }
 
         header {
@@ -21,7 +21,7 @@
             padding: 1em;
             font-size: 24px;
             text-shadow: 1px 1px 1px #000;
-            position: relative; /* Required for absolute positioning of the email icon */
+            position: relative;
         }
 
         .email-icon {
@@ -34,14 +34,14 @@
         }
 
         .email-icons a {
-            margin: 10px 0; /* Adjust the margin for spacing */
-            font-size: 24px; /* Increased size */
-            color: #bd646e; /* Contrast color */
+            margin: 10px 0;
+            font-size: 24px;
+            color: #bd646e;
             transition: color 0.3s ease;
         }
 
         .email-icons a:hover {
-            color: #333; /* Change color on hover */
+            color: #333;
         }
 
         section {
@@ -76,14 +76,14 @@
 
         .social-icons {
             display: flex;
-            flex-direction: column; /* Align icons in a column */
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             margin: 20px 0;
         }
 
         .social-icons a {
-            margin: 20px 0; /* Adjust the margin to add space */
+            margin: 20px 0;
             font-size: 36px;
             color: #333;
             transition: color 0.3s ease;
@@ -91,10 +91,9 @@
 
         .social-icons a:hover {
             color: #bd646e;
-            transform: scale(1.2); /* Example: Add scale on hover */
+            transform: scale(1.2);
         }
 
-        /* Responsive Styles */
         @media (max-width: 600px) {
             .social-icons a {
                 font-size: 24px;
@@ -109,18 +108,17 @@
 
 <body>
 
-    <header style="position: relative;">
+    <header>
         <h1 style="margin-bottom: 10px;">AI Techtonics - Social Media Links</h1>
-        <div class="email-icon" style="position: absolute; top: 70px; right: 10px; display: flex; flex-direction: column; align-items: center;">
+        <div class="email-icon">
             <p style="margin-bottom: 5px;">Have any questions or suggestions?</p>
             <div class="email-icons">
-                <a href="mailto:aitechtoniccreations@gmail.com" target="_blank" style="font-size: 24px; color: #bd646e; transition: color 0.3s ease;"><i class="far fa-envelope"></i></a>
+                <a href="mailto:aitechtoniccreations@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
             </div>
         </div>
         <p>Follow us on each of these handles to support our journey.</p>
     </header>
     
-
     <section class="social-icons">
         <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
         <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
