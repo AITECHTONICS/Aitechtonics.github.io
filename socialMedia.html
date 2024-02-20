@@ -1,6 +1,7 @@
-<!-- Social Media Links Page -->
+<!-- Updated Social Media Links Page -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,10 +9,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f0f0f0;
+            background-color: #64c9bd; /* Gradient background */
         }
 
         header {
@@ -19,6 +20,29 @@
             color: #fff;
             text-align: center;
             padding: 1em;
+            font-size: 24px;
+            text-shadow: 1px 1px 1px #000;
+            position: relative; /* Required for absolute positioning of the email icon */
+        }
+
+        .email-icon {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .email-icons a {
+            margin: 10px 0; /* Adjust the margin for spacing */
+            font-size: 30px; /* Increased size */
+            color: #bd646e; /* Contrast color */
+            transition: color 0.3s ease;
+        }
+
+        .email-icons a:hover {
+            color: #333; /* Change color on hover */
         }
 
         section {
@@ -34,6 +58,10 @@
             position: fixed;
             bottom: 0;
             width: 100%;
+            font-size: 14px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         img {
@@ -47,21 +75,52 @@
             color: #333;
         }
 
-        .social-icons a {
-            margin: 0 10px;
-            font-size: 24px;
-            color: #333;
+        .social-icons {
+            display: flex;
+            flex-direction: column; /* Align icons in a column */
+            justify-content: center;
+            align-items: center;
+            margin: 20px 0;
         }
 
-        /* Add responsive styles here */
+        .social-icons a {
+            margin: 20px 0; /* Adjust the margin to add space */
+            font-size: 36px;
+            color: #333;
+            transition: color 0.3s ease;
+        }
 
+        .social-icons a:hover {
+            color: #bd646e;
+            transform: scale(1.2); /* Example: Add scale on hover */
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 600px) {
+            .social-icons a {
+                font-size: 24px;
+            }
+
+            .email-icons a {
+                font-size: 20px;
+            }
+        }
     </style>
 </head>
+
 <body>
 
-    <header>
-        <h1>AI Techtonics - Social Media Links</h1>
+    <header style="position: relative;">
+        <h1 style="margin-bottom: 10px;">AI Techtonics - Social Media Links</h1>
+        <div class="email-icon" style="position: absolute; top: 70px; right: 10px; display: flex; flex-direction: column; align-items: center;">
+            <p style="margin-bottom: 5px;">Have any questions or suggestions?</p>
+            <div class="email-icons">
+                <a href="mailto:aitechtoniccreations@gmail.com" target="_blank" style="font-size: 24px; color: #bd646e; transition: color 0.3s ease;"><i class="far fa-envelope"></i></a>
+            </div>
+        </div>
+        <p>Follow us on each of these handles to support our journey.</p>
     </header>
+    
 
     <section class="social-icons">
         <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
@@ -76,4 +135,5 @@
     </footer>
 
 </body>
+
 </html>
