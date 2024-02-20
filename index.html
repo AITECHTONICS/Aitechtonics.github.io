@@ -12,7 +12,7 @@
             font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f7f7f7; /* Light background */
+            background-color: #64c9bd; /* Light blue background */
             display: flex;
             flex-direction: column;
             min-height: 100vh; /* Ensure body fills the viewport height */
@@ -34,12 +34,13 @@
         section {
             padding: 2em;
             text-align: center;
-            border: 2px solid #4CAF50; /* Green border */
+            border: 2px solid #b4b6af; /* Orange border for contrast */
             margin: 10px;
             border-radius: 15px; /* Rounded corners */
-            background-color: #fff;
+            background-color: #bd646e; /* Light orange background */
             box-shadow: 0 8px 12px rgba(0,0,0,0.1);
             transition: all 0.3s ease;
+            position: relative;
         }
 
         section:hover {
@@ -56,8 +57,20 @@
             transition: color 0.3s ease;
         }
 
-        section a:hover {
-            color: #4CAF50; /* Green color on hover */
+        section:hover a {
+            color: #bdaa64; /* Orange color on hover for contrast */
+        }
+
+        .hidden-robot {
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translate(0, -50%);
+            display: none;
+        }
+
+        section:hover .hidden-robot {
+            display: block;
         }
 
         footer {
