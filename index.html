@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,7 +12,6 @@
             margin: 0;
             padding: 0;
             background-color: #f7f7f7; /* Light background */
-            overflow-y: scroll; /* Added scroll for body */
         }
 
         header {
@@ -82,7 +80,6 @@
             0% {
                 transform: scale(0);
             }
-
             100% {
                 transform: scale(1);
             }
@@ -108,14 +105,13 @@
         }
     </style>
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
+        document.addEventListener("DOMContentLoaded", function() {
             // Show the robot image and welcome message after the page loads
             document.getElementById("robot-img").style.display = "block";
             document.querySelector(".welcome-message").style.display = "block";
         });
     </script>
 </head>
-
 <body>
 
     <header>
@@ -128,28 +124,23 @@
         <img id="robot-img" src="robot.png" alt="Cute Robot">
         <!-- Welcome Message -->
         <p class="welcome-message">Welcome!</p>
-
+        
     </div>
     <section style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 18px;">
         <p>Welcome! Here at AI-TECHTONICS, we're dedicated to enhancing your productivity through the power of AI. Embrace it to elevate your efficiency. Confused about how to get started?</p>
     </section>
-
+    
+    
     <section>
-        <a href="socialMedia.html">
-            <h2>Our Centralized Social Media Links</h2>
-        </a>
+        <a href="socialMedia.html"><h2>Our Centralized Social Media Links</h2></a>
     </section>
 
     <section>
-        <a href="aiTools.html">
-            <h2>AI-Infused Tools</h2>
-        </a>
+        <a href="aiTools.html"><h2>AI-Infused Tools</h2></a>
     </section>
 
     <section>
-        <a href="aiPrompts.html">
-            <h2>Engaging AI Prompts</h2>
-        </a>
+        <a href="aiPrompts.html"><h2>Engaging AI Prompts</h2></a>
     </section>
 
     <footer>
@@ -157,5 +148,4 @@
     </footer>
 
 </body>
-
 </html>
