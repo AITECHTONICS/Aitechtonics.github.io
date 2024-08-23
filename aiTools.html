@@ -1,18 +1,21 @@
-<!-- AI Tools Page -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Techtonics - AI Tools</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f0f0f0;
+            background-color: #64c9bd; /* Background color matching the first snippet */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Ensure body fills the viewport height */
         }
 
         header {
@@ -20,61 +23,98 @@
             color: #fff;
             text-align: center;
             padding: 1em;
+            font-size: 2em;
+            text-shadow: 1px 1px 1px #000; /* Added text shadow for consistency */
         }
 
         section {
             padding: 2em;
             text-align: center;
+            margin: 10px;
+            border-radius: 15px; /* Rounded corners */
+            background-color: #64c9bd; /* Light grey background to match the first snippet */
+            box-shadow: 0 8px 12px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            /* Removed background-color for button section */
+        }
+
+        section:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 20px rgba(0,0,0,0.2);
+        }
+
+        .tool-subsection {
+            margin-bottom: 20px;
+            /* Background color removed from button section */
+        }
+
+        .tool-subsection button {
+            padding: 10px 20px;
+            font-size: 1em;
+            border-radius: 5px;
+            border: none;
+            background-color: #333; /* Dark background for buttons */
+            color: #FFFF00; /* White text for buttons */
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .tool-subsection button:hover {
+            background-color: #bd646e; /* Button color on hover */
         }
 
         footer {
             background-color: #333;
-            color: #fff;
+            color: #64c9bd;
             text-align: center;
             padding: 1em;
-            position: fixed;
-            bottom: 0;
             width: 100%;
+            font-size: 0.8em;
+            position: relative;
+            margin-top: auto; /* Ensures footer is at the bottom */
         }
 
         a {
             text-decoration: none;
             color: #333;
+            transition: color 0.3s ease;
         }
 
-        strong {
-            font-weight: bold;
+        a:hover {
+            color: #bd646e; /* Link color on hover */
         }
 
-        .tool-subsection button {
-            margin-bottom: 10px;
+        /* Media Queries */
+        @media (max-width: 600px) {
+            header {
+                font-size: 1.5em;
+            }
+
+            section {
+                padding: 1.5em;
+                margin: 8px;
+            }
+
+            .tool-subsection button {
+                font-size: 0.9em;
+                padding: 8px 16px;
+            }
         }
-
-        /* Add responsive styles here */
-
     </style>
 </head>
 <body>
 
     <header>
-        <h1>AI Techtonics - AI Tools</h1>
+        <h1>AI Tools Section</h1>
     </header>
 
     <section>
-        <h2>AI Tools Section</h2>
+        <h2>Bing AI</h2>
         
         <div class="tool-subsection">
-            <button onclick="window.location.href='https://www.chatgpt.com'"><strong>ChatGPT</strong></button>
+            <button onclick="window.location.href='https://www.bing.com'"><strong>Visit Bing AI</strong></button>
         </div>
-
-        <div class="tool-subsection">
-            <button onclick="window.location.href='https://www.bing.com'"><strong>Bing</strong></button>
-        </div>
-
-        <!-- Add more AI Tools subsections as needed -->
-
-        <!-- Add this div for social media icons -->
-
     </section>
 
     <footer>
