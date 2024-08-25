@@ -4,12 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Techtonics - AI Prompts</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f0f0f0;
+            background-color: #64c9bd; /* Sync with the index page */
+            color: #333;
+            scroll-behavior: smooth; /* Smooth scrolling */
         }
 
         header {
@@ -17,11 +20,24 @@
             color: #fff;
             text-align: center;
             padding: 1em;
+            font-size: 2em;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
 
         section {
             padding: 2em;
             text-align: center;
+            margin: 20px auto;
+            border-radius: 15px;
+            width: 80%;
+            max-width: 800px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        section:hover {
+            transform: scale(1.03);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
         }
 
         footer {
@@ -29,19 +45,151 @@
             color: #fff;
             text-align: center;
             padding: 1em;
-            position: fixed;
-            bottom: 0;
             width: 100%;
             font-size: 0.8em;
+            position: relative; /* Changed from fixed to relative */
+            margin-top: 2em; /* Added margin to separate from content */
         }
 
         a {
             text-decoration: none;
+            color: #bd646e; /* Soft orange */
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
             color: #333;
         }
 
-        /* Add responsive styles here */
+        .prompt-section {
+            background-color: #c8d8d8;
+            border-radius: 10px;
+            padding: 1.5em;
+            margin-top: 20px;
+            text-align: left;
+        }
 
+        .copy-button {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        .copy-button:hover {
+            background-color: #bd646e; /* Button hover color */
+        }
+
+        .dropdown-button {
+            display: inline-block;
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            margin-top: 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+            position: relative;
+        }
+
+        .dropdown-button:hover {
+            background-color: #bd646e; /* Button hover color */
+        }
+
+        .dropdown-icon {
+            margin-left: 10px;
+            font-size: 0.9em;
+        }
+
+        .dropdown-content {
+            display: none;
+            margin-top: 20px;
+            text-align: left;
+            border-radius: 10px;
+            background-color: #c8d8d8;
+            padding: 1.5em;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        .floating-images {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .image-container {
+            position: relative;
+            overflow: hidden;
+            width: 150px;
+            height: 150px;
+            border-radius: 10px;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .image-container:hover img {
+            transform: scale(1.2); /* Zoom effect on hover */
+        }
+
+        .download-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            display: none; /* Hidden by default */
+        }
+
+        .image-container:hover .download-button {
+            display: block; /* Show download button on hover */
+        }
+
+        .download-button:hover {
+            background-color: #bd646e; /* Button hover color */
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0); }
+        }
+
+        @media (max-width: 600px) {
+            header {
+                font-size: 1.5em;
+            }
+
+            section {
+                width: 90%;
+                padding: 1.5em;
+            }
+
+            .prompt-section {
+                padding: 1em;
+            }
+
+            .copy-button, .dropdown-button, .download-button {
+                padding: 8px 12px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -50,14 +198,83 @@
         <h1>AI Techtonics - AI Prompts</h1>
     </header>
 
-    <section>
+    <section id="ai-prompts">
         <h2>AI Prompts Section</h2>
-        <p>Prompt: ABC</p>
+        <!-- Dropdown button to reveal the prompt details and images -->
+        <button class="dropdown-button" onclick="toggleDropdown()">Image Generation Prompt<span class="dropdown-icon">▼</span></button>
+        <div class="dropdown-content" id="dropdown-content">
+            <!-- Image Generation Prompt Section -->
+            <section id="image-generation-prompt" class="prompt-section">
+                <h2>Image Generation Prompt</h2>
+                <div>
+                    <h3>Prompt Template:</h3>
+                    <p id="prompt-template">Create an image of [Title/Subject]. The scene should be set in [Context and Setting], featuring [Key Elements and Details]. Use a [Color Scheme and Lighting] to convey the desired mood. Capture the scene from [Perspective and Composition], ensuring the focus is on [specific element or area]. The image should have a [Style and Artistic Direction] to enhance its visual appeal. Include subjects that are [Subject Expressions and Actions] to add dynamism to the scene. [Additional Notes].</p>
+                    <button class="copy-button" onclick="copyToClipboard('prompt-template')">Copy Prompt Template</button>
+
+                    <h3>Prompt Example:</h3>
+                    <p id="prompt-example">Create an image of a serene mountain village at sunrise. The scene should be set in a quaint village nestled in a valley surrounded by towering snow-capped mountains. The village features rustic wooden cottages with smoke gently rising from their chimneys, cobblestone paths, and a small flowing river that reflects the early morning light. Use a color palette of soft pastels, including warm pinks, oranges, and cool blues, to depict the gentle morning light and the tranquil atmosphere. The lighting should create a soft glow over the mountains and illuminate the rooftops of the cottages, casting long shadows on the ground. Capture the scene from a low-angle perspective from the edge of the village, looking up towards the mountains with the village in the foreground and the sun just beginning to rise behind the peaks. The image should have a realistic, painterly style, emphasizing the natural beauty and peacefulness of the mountain setting. Include subjects that are villagers starting their day, some fetching water from the river, while others are tending to their gardens, adding a sense of daily life and community. Ensure the image has a high resolution to capture the intricate details of the mountain landscape and the texture of the village buildings.</p>
+                    <button class="copy-button" onclick="copyToClipboard('prompt-example')">Copy Prompt Example</button>
+                </div>
+
+                <!-- Floating Images -->
+                <div class="floating-images" id="floating-images">
+                    <h2>Examples of Image</h2>
+                    <div class="image-container">
+                        <img src="1.jpg" alt="Generated Image 1">
+                        <button class="download-button" onclick="downloadImage('1.jpg')">⬇️</button>
+                    </div>
+                    <div class="image-container">
+                        <img src="2.jpg" alt="Generated Image 2">
+                        <button class="download-button" onclick="downloadImage('2.jpg')">⬇️</button>
+                    </div>
+                    <div class="image-container">
+                        <img src="3.jpg" alt="Generated Image 3">
+                        <button class="download-button" onclick="downloadImage('3.jpg')">⬇️</button>
+                    </div>
+                    <div class="image-container">
+                        <img src="4.jpg" alt="Generated Image 4">
+                        <button class="download-button" onclick="downloadImage('4.jpg')">⬇️</button>
+                    </div>
+                </div>
+            </section>
+        </div>
     </section>
 
     <footer>
         <p>&copy; 2024 AI Techtonics. All rights reserved.</p>
     </footer>
+
+    <script>
+        function toggleDropdown() {
+            var dropdownContent = document.getElementById('dropdown-content');
+            var floatingImages = document.getElementById('floating-images');
+            if (dropdownContent.style.display === 'none' || dropdownContent.style.display === '') {
+                dropdownContent.style.display = 'block';
+                floatingImages.style.display = 'flex'; // Show images
+            } else {
+                dropdownContent.style.display = 'none';
+                floatingImages.style.display = 'none'; // Hide images
+            }
+        }
+
+        function copyToClipboard(elementId) {
+            const text = document.getElementById(elementId).innerText;
+            navigator.clipboard.writeText(text).then(() => {
+                alert("Copied to clipboard!");
+            }).catch(err => {
+                console.error("Failed to copy: ", err);
+            });
+        }
+
+        function downloadImage(src) {
+            const link = document.createElement('a');
+            link.href = src;
+            link.download = src;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+    </script>
 
 </body>
 </html>
