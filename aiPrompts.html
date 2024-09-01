@@ -6,13 +6,16 @@
     <title>AI Techtonics - AI Prompts</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: 'Roboto', sans-serif;
+        html, body {
+            height: 100%; /* Ensure body takes full height */
             margin: 0;
             padding: 0;
             background-color: #64c9bd; /* Sync with the index page */
             color: #333;
+            font-family: 'Roboto', sans-serif;
             scroll-behavior: smooth; /* Smooth scrolling */
+            display: flex;
+            flex-direction: column;
         }
 
         header {
@@ -47,8 +50,7 @@
             padding: 1em;
             width: 100%;
             font-size: 0.8em;
-            position: relative; /* Changed from fixed to relative */
-            margin-top: 2em; /* Added margin to separate from content */
+            margin-top: auto; /* Ensures footer is pushed to the bottom */
         }
 
         a {
@@ -236,24 +238,19 @@
                         <img src="2.jpg" alt="Generated Image 2">
                         <button class="download-button" onclick="downloadImage('2.jpg')">⬇️</button>
                     </div>
-                    <div class="image-container">
-                        <img src="3.jpg" alt="Generated Image 3">
-                        <button class="download-button" onclick="downloadImage('3.jpg')">⬇️</button>
-                    </div>
+                    <!-- Add more images as needed -->
                 </div>
             </section>
         </div>
     </section>
 
-    <!-- New Section: Chat GPT Custom Instructions Section -->
     <section id="chat-gpt-instructions">
         <h2>Chat GPT Custom Instructions Section</h2>
         <!-- New Button to Reveal Custom Instructions -->
-        <button class="dropdown-button" onclick="toggleChatGPTInstructions()">SECRETES OF chat-gpt<span class="dropdown-icon">▼</span></button>
+        <button class="dropdown-button" onclick="toggleChatGPTInstructions()">SECRETS OF ChatGPT<span class="dropdown-icon">▼</span></button>
         <div class="dropdown-content" id="chat-gpt-dropdown-content">
             <div class="prompt-section">
-                <h3>Custom Instructions
-                    What would you like ChatGPT to know about you to provide better responses?:</h3>
+                <h3>Custom Instructions</h3>
                 <p id="instruction-template">I am from India.
                     I am a social media content script writer involved in writing scripts for content creator legends like Ali Abdaal and many more.
                     I work for a firm that creates engaging technology and AI-related scripts for short-form video.
@@ -263,7 +260,7 @@
                     My target audience includes tech enthusiasts, general users, and content creators.</p>
                 <button class="copy-button" onclick="copyToClipboard('instruction-template')">Copy Instruction Template</button>
 
-                <h3>How would you like ChatGPT to respond?:</h3>
+                <h3>How would you like ChatGPT to respond?</h3>
                 <p id="instruction-example">ChatGPT should compulsorily ask on which topic the user wishes to have the script written.
                     Based on the topic, ChatGPT should suggest 10 eye-catching hooks that can be used at the start of the script.
                     If the user is satisfied with the hooks, ChatGPT should proceed; otherwise, ChatGPT should ask the user to suggest a hook to be used in the script.
@@ -286,41 +283,36 @@
     </section>
 
     <footer>
-        <p>© 2024 AI Techtonics. All rights reserved.</p>
+        <p>&copy; 2024 AI Techtonics. All rights reserved.</p>
     </footer>
 
     <script>
         function toggleDropdown() {
-            const content = document.getElementById('dropdown-content');
-            const button = document.querySelector('#ai-prompts .dropdown-button');
-            const isVisible = content.style.display === 'block';
-            content.style.display = isVisible ? 'none' : 'block';
-            button.querySelector('.dropdown-icon').textContent = isVisible ? '▼' : '▲';
+            const dropdownContent = document.getElementById('dropdown-content');
+            dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
         }
 
         function toggleChatGPTInstructions() {
-            const content = document.getElementById('chat-gpt-dropdown-content');
-            const button = document.querySelector('#chat-gpt-instructions .dropdown-button');
-            const isVisible = content.style.display === 'block';
-            content.style.display = isVisible ? 'none' : 'block';
-            button.querySelector('.dropdown-icon').textContent = isVisible ? '▼' : '▲';
+            const chatGPTContent = document.getElementById('chat-gpt-dropdown-content');
+            chatGPTContent.style.display = chatGPTContent.style.display === 'block' ? 'none' : 'block';
         }
 
-        function copyToClipboard(elementId) {
-            const text = document.getElementById(elementId).textContent;
-            navigator.clipboard.writeText(text).then(() => {
-                alert('Text copied to clipboard');
+        function copyToClipboard(id) {
+            const textToCopy = document.getElementById(id).innerText;
+            navigator.clipboard.writeText(textToCopy).then(() => {
+                alert('Copied to clipboard!');
             });
         }
 
-        function downloadImage(imageSrc) {
+        function downloadImage(src) {
             const link = document.createElement('a');
-            link.href = imageSrc;
-            link.download = imageSrc;
+            link.href = src;
+            link.download = src;
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
         }
     </script>
+
 </body>
 </html>
