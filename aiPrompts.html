@@ -248,64 +248,78 @@
     <!-- New Section: Chat GPT Custom Instructions Section -->
     <section id="chat-gpt-instructions">
         <h2>Chat GPT Custom Instructions Section</h2>
-        <div class="prompt-section">
-            <h3>Custom Instructions
-                What would you like ChatGPT to know about you to provide better responses?:</h3>
-            <p id="instruction-template">I am from India.
-                I am a social media content script writer involved in writing scripts for content creator legends like Ali Abdaal and many more.
-                I work for a firm that creates engaging technology and AI-related scripts for short-form video.
-                My scripts use English and Hindi words, which are transliterations of Hindi in English.
-                My scripts are always engaging and use words that create curiosity in the audience by using a scientific approach.
-                My scripts also involve a biological approach where each word releases an optimum level of dopamine in the audience's body, creating curiosity to watch till the end.
-                My target audience includes tech enthusiasts, general users, and content creators.</p>
-            <button class="copy-button" onclick="copyToClipboard('instruction-template')">Copy Instruction Template</button>
+        <!-- New Button to Reveal Custom Instructions -->
+        <button class="dropdown-button" onclick="toggleChatGPTInstructions()">SECRETES OF chat-gpt<span class="dropdown-icon">▼</span></button>
+        <div class="dropdown-content" id="chat-gpt-dropdown-content">
+            <div class="prompt-section">
+                <h3>Custom Instructions
+                    What would you like ChatGPT to know about you to provide better responses?:</h3>
+                <p id="instruction-template">I am from India.
+                    I am a social media content script writer involved in writing scripts for content creator legends like Ali Abdaal and many more.
+                    I work for a firm that creates engaging technology and AI-related scripts for short-form video.
+                    My scripts use English and Hindi words, which are transliterations of Hindi in English.
+                    My scripts are always engaging and use words that create curiosity in the audience by using a scientific approach.
+                    My scripts also involve a biological approach where each word releases an optimum level of dopamine in the audience's body, creating curiosity to watch till the end.
+                    My target audience includes tech enthusiasts, general users, and content creators.</p>
+                <button class="copy-button" onclick="copyToClipboard('instruction-template')">Copy Instruction Template</button>
 
-            <h3>How would you like ChatGPT to respond?:</h3>
-            <p id="instruction-example">ChatGPT should compulsorily ask on which topic the user wishes to have the script written.
-                Based on the topic, ChatGPT should suggest 10 eye-catching hooks that can be used at the start of the script.
-                If the user is satisfied with the hooks, ChatGPT should proceed; otherwise, ChatGPT should ask the user to suggest a hook to be used in the script.
-                ChatGPT should ask for examples of solutions.
-                ChatGPT should ask for a detailed description of the problem and solution, or any use case scenario.
-                ChatGPT should send the script in Hindi transliterated into English.
-                The entire script should be optimized to make the audience stay and watch till the end of the video, ending with a call to action.
-                Each word should release the optimum amount of dopamine to keep the audience engaged.
-                The format for the script should include:
-                Negative connotation with hook words saying what users never expected about the subject.
-                Instant solution to the problem the general public faces.
-                Creating aspiration by explaining the solution, including the use case scenario or example.
-                Call to action.
-                The tone of the script should be casual and humorous, incorporating entertaining elements to avoid boring the audience.
-                Consider visual elements like text overlays, animations, or specific scenes to enhance the script's engagement.
-                Include a feedback loop to review and revise the script based on initial feedback before finalizing it.</p>
-            <button class="copy-button" onclick="copyToClipboard('instruction-example')">Copy Instruction Example</button>
+                <h3>How would you like ChatGPT to respond?:</h3>
+                <p id="instruction-example">ChatGPT should compulsorily ask on which topic the user wishes to have the script written.
+                    Based on the topic, ChatGPT should suggest 10 eye-catching hooks that can be used at the start of the script.
+                    If the user is satisfied with the hooks, ChatGPT should proceed; otherwise, ChatGPT should ask the user to suggest a hook to be used in the script.
+                    ChatGPT should ask for examples of solutions.
+                    ChatGPT should ask for a detailed description of the problem and solution, or any use case scenario.
+                    ChatGPT should send the script in Hindi transliterated into English.
+                    The entire script should be optimized to make the audience stay and watch till the end of the video, ending with a call to action.
+                    Each word should release the optimum amount of dopamine to keep the audience engaged.
+                    The format for the script should include:
+                    Negative connotation with hook words saying what users never expected about the subject.
+                    Instant solution to the problem the general public faces.
+                    Creating aspiration by explaining the solution, including the use case scenario or example.
+                    Call to action.
+                    The tone of the script should be casual and humorous, incorporating entertaining elements to avoid boring the audience.
+                    Consider visual elements like text overlays, animations, or specific scenes to enhance the script's engagement.
+                    Include a feedback loop to review and revise the script based on initial feedback before finalizing it.</p>
+                <button class="copy-button" onclick="copyToClipboard('instruction-example')">Copy Instruction Example</button>
+            </div>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2024 AI Techtonics. All rights reserved.</p>
+        <p>© 2024 AI Techtonics. All rights reserved.</p>
     </footer>
 
     <script>
-        function copyToClipboard(elementId) {
-            const text = document.getElementById(elementId).innerText;
-            navigator.clipboard.writeText(text).then(() => {
-                alert('Copied to clipboard!');
-            });
-        }
-
         function toggleDropdown() {
             const content = document.getElementById('dropdown-content');
-            const button = document.querySelector('.dropdown-button');
+            const button = document.querySelector('#ai-prompts .dropdown-button');
             const isVisible = content.style.display === 'block';
             content.style.display = isVisible ? 'none' : 'block';
             button.querySelector('.dropdown-icon').textContent = isVisible ? '▼' : '▲';
+        }
+
+        function toggleChatGPTInstructions() {
+            const content = document.getElementById('chat-gpt-dropdown-content');
+            const button = document.querySelector('#chat-gpt-instructions .dropdown-button');
+            const isVisible = content.style.display === 'block';
+            content.style.display = isVisible ? 'none' : 'block';
+            button.querySelector('.dropdown-icon').textContent = isVisible ? '▼' : '▲';
+        }
+
+        function copyToClipboard(elementId) {
+            const text = document.getElementById(elementId).textContent;
+            navigator.clipboard.writeText(text).then(() => {
+                alert('Text copied to clipboard');
+            });
         }
 
         function downloadImage(imageSrc) {
             const link = document.createElement('a');
             link.href = imageSrc;
             link.download = imageSrc;
+            document.body.appendChild(link);
             link.click();
+            document.body.removeChild(link);
         }
     </script>
 </body>
