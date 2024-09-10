@@ -213,45 +213,53 @@
         <button class="dropdown-button" onclick="toggleDropdown()">Image Generation Prompt<span class="dropdown-icon">▼</span></button>
         <div class="dropdown-content" id="dropdown-content">
             <!-- Image Generation Prompt Section -->
-            <section id="image-generation-prompt" class="prompt-section">
-                <h2>Image Generation Prompt</h2>
-                <div>
-                    <h3>Prompt Template:</h3>
-                    <p id="prompt-template">Create an image of [Title/Subject]. The scene should be set in [Context and Setting], featuring [Key Elements and Details]. Use a [Color Scheme and Lighting] to convey the desired mood. Capture the scene from [Perspective and Composition], ensuring the focus is on [specific element or area]. The image should have a [Style and Artistic Direction] to enhance its visual appeal. Include subjects that are [Subject Expressions and Actions] to add dynamism to the scene. [Additional Notes].</p>
-                    <button class="copy-button" onclick="copyToClipboard('prompt-template')">Copy Prompt Template</button>
+            <!-- New Logo Generating Prompt Section -->
+                <section id="logo-generating-prompt" class="prompt-section">
+                    <h2>Logo Generating Prompt's</h2>
+                    <div>
+                        <h3>Prompt Template:</h3>
+                        <p id="logo-prompt-template">Design a logo for "EcoWave Solutions," a company in the renewable energy industry that serves environmentally conscious individuals and businesses, typically aged 25-45, who are passionate about sustainability and clean energy. The brand’s core values are sustainability, innovation, and reliability, and its mission is to make renewable energy accessible to all. Our main competitors include Tesla Energy and SolarCity, but we differentiate ourselves through our focus on affordable solar technology for residential areas. We envision the logo to have a modern and minimalist look, using shades of green and blue with a clean, sans-serif font. The logo should incorporate elements such as a wave or solar panel icon, and convey a sense of trust, innovation, and environmental consciousness. It will be used primarily for our website, social media, and product packaging, and we want the overall design to reflect themes of clean energy, sustainability, and forward-thinking solutions.
 
-                    <h3>Prompt Example:</h3>
-                    <p id="prompt-example">Create an image of a serene mountain village at sunrise. The scene should be set in a quaint village nestled in a valley surrounded by towering snow-capped mountains. The village features rustic wooden cottages with smoke gently rising from their chimneys, cobblestone paths, and a small flowing river that reflects the early morning light. Use a color palette of soft pastels, including warm pinks, oranges, and cool blues, to depict the gentle morning light and the tranquil atmosphere. The lighting should create a soft glow over the mountains and illuminate the rooftops of the cottages, casting long shadows on the ground. Capture the scene from a low-angle perspective from the edge of the village, looking up towards the mountains with the village in the foreground and the sun just beginning to rise behind the peaks. The image should have a realistic, painterly style, emphasizing the natural beauty and peacefulness of the mountain setting. Include subjects that are villagers starting their day, some fetching water from the river, while others are tending to their gardens, adding a sense of daily life and community. Ensure the image has a high resolution to capture the intricate details of the mountain landscape and the texture of the village buildings.</p>
-                    <button class="copy-button" onclick="copyToClipboard('prompt-example')">Copy Prompt Example</button>
-                </div>
+                        </p>
+                        <button class="copy-button" onclick="copyToClipboard('logo-prompt-template')">Copy Prompt Template</button>
+            
+                        <h3>Prompt Example:</h3>
+                        <p id="logo-prompt-example">Design a logo for "TechInnovate Labs," a company in the cutting-edge tech industry that provides AI-driven solutions to startups and businesses. Our target audience includes tech enthusiasts, entrepreneurs, and companies focused on innovation, primarily aged 25-40. The brand’s core values are innovation, efficiency, and reliability, with a mission to deliver breakthrough technologies that transform industries. Our main competitors include IBM, OpenAI, and Microsoft, but we stand out by offering tailored, scalable solutions for small and medium businesses. We want the logo to have a sleek and futuristic style, using dark blues and metallic accents, with a preference for modern, sans-serif fonts. The logo should include a tech-related icon, such as a circuit, AI brain, or abstract geometric shapes, and evoke feelings of cutting-edge technology, trust, and expertise. It will be used on our website, app, and marketing materials, and should reflect themes of innovation, AI, and future-forward thinking.
 
-                <!-- Floating Images -->
-                <div class="floating-images" id="floating-images">
-                    <h2>Examples of Image</h2>
-                    <div class="image-container">
-                        <img src="1.jpg" alt="Generated Image 1">
-                        <button class="download-button" onclick="downloadImage('1.jpg')">⬇️</button>
+                        </p>
+                        <button class="copy-button" onclick="copyToClipboard('logo-prompt-example')">Copy Prompt Example</button>
                     </div>
-                    <div class="image-container">
-                        <img src="2.jpg" alt="Generated Image 2">
-                        <button class="download-button" onclick="downloadImage('2.jpg')">⬇️</button>
+                </section>
+
+                <section id="3d-animated-character-prompt" class="prompt-section">
+                    <h2>3D Animated Character Prompt</h2>
+                    <div>
+                        <h3>Prompt Template:</h3>
+                        <p id="3d-character-template">Create a 3D animated character of [Character Description]. The scene should be set in [Context and Setting], featuring [Key Elements and Details]. Use a [Color Scheme and Lighting] to convey the desired mood. Capture the character from [Perspective and Composition], ensuring the focus is on [Specific Element or Area]. The character should have [Style and Artistic Direction] to enhance its visual appeal. Include [Character Expressions and Actions] to add dynamism to the scene. [Additional Notes].</p>
+                        <button class="copy-button" onclick="copyToClipboard('3d-character-template')">Copy Prompt Template</button>
+            
+                        <h3>Prompt Example:</h3>
+                        <p id="3d-character-example">Generate a 3D animated cute character of a young boy with large, expressive eyes and a friendly, warm facial expression. He has thick, dark hair styled upward in a voluminous fashion. The boy is dressed in a light turquoise kurta with a saffron-orange and gold-striped sash draped over his shoulder, paired with loose-fitting saffron-colored pants. His traditional look is completed with visible brown sandals that add to the cultural attire. The character stands with his hands in a 'Namaste' gesture, and the background should be soft and natural, with forest-like elements to gently complement his peaceful and welcoming pose.</p>
+                        <button class="copy-button" onclick="copyToClipboard('3d-character-example')">Copy Prompt Example</button>
                     </div>
-                    <!-- Add more image containers as needed -->
-                </div>
+                </section>
 
-                <!-- New Prompt Section under Image Generation Prompt -->
-<section id="3d-animated-character-prompt" class="prompt-section">
-    <h2>3D Animated Character Prompt</h2>
-    <div>
-        <h3>Prompt Template:</h3>
-        <p id="3d-character-template">Create a 3D animated character of [Character Description]. The scene should be set in [Context and Setting], featuring [Key Elements and Details]. Use a [Color Scheme and Lighting] to convey the desired mood. Capture the character from [Perspective and Composition], ensuring the focus is on [Specific Element or Area]. The character should have [Style and Artistic Direction] to enhance its visual appeal. Include [Character Expressions and Actions] to add dynamism to the scene. [Additional Notes].</p>
-        <button class="copy-button" onclick="copyToClipboard('3d-character-template')">Copy Prompt Template</button>
+                <section id="image-generation-prompt" class="prompt-section">
+                    <h2>Image Generation Prompt</h2>
+                    <div>
+                        <h3>Prompt Template:</h3>
+                        <p id="prompt-template">Create an image of [Title/Subject]. The scene should be set in [Context and Setting], featuring [Key Elements and Details]. Use a [Color Scheme and Lighting] to convey the desired mood. Capture the scene from [Perspective and Composition], ensuring the focus is on [specific element or area]. The image should have a [Style and Artistic Direction] to enhance its visual appeal. Include subjects that are [Subject Expressions and Actions] to add dynamism to the scene. [Additional Notes].</p>
+                        <button class="copy-button" onclick="copyToClipboard('prompt-template')">Copy Prompt Template</button>
+                
+                        <h3>Prompt Example:</h3>
+                        <p id="prompt-example">Create an image of a serene mountain village at sunrise. The scene should be set in a quaint village nestled in a valley surrounded by towering snow-capped mountains. The village features rustic wooden cottages with smoke gently rising from their chimneys, cobblestone paths, and a small flowing river that reflects the early morning light. Use a color palette of soft pastels, including warm pinks, oranges, and cool blues, to depict the gentle morning light and the tranquil atmosphere. The lighting should create a soft glow over the mountains and illuminate the rooftops of the cottages, casting long shadows on the ground. Capture the scene from a low-angle perspective from the edge of the village, looking up towards the mountains with the village in the foreground and the sun just beginning to rise behind the peaks. The image should have a realistic, painterly style, emphasizing the natural beauty and peacefulness of the mountain setting. Include subjects that are villagers starting their day, some fetching water from the river, while others are tending to their gardens, adding a sense of daily life and community. Ensure the image has a high resolution to capture the intricate details of the mountain landscape and the texture of the village buildings.</p>
+                        <button class="copy-button" onclick="copyToClipboard('prompt-example')">Copy Prompt Example</button>
+                    </div>
+            
+                <!-- 3D Animated Character Prompt Section -->
 
-        <h3>Prompt Example:</h3>
-        <p id="3d-character-example">Generate a 3D animated cute character of a young boy with large, expressive eyes and a friendly, warm facial expression. He has thick, dark hair styled upward in a voluminous fashion. The boy is dressed in a light turquoise kurta with a saffron-orange and gold-striped sash draped over his shoulder, paired with loose-fitting saffron-colored pants. His traditional look is completed with visible brown sandals that add to the cultural attire. The character stands with his hands in a 'Namaste' gesture, and the background should be soft and natural, with forest-like elements to gently complement his peaceful and welcoming pose.</p>
-        <button class="copy-button" onclick="copyToClipboard('3d-character-example')">Copy Prompt Example</button>
-    </div>
-</section>
+            </section>
+            
 
 
             </section>
