@@ -8,23 +8,27 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 
     <style>
+        /* Body and Background */
         body {
             font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #64c9bd;
+            background: linear-gradient(180deg, #3a7bd5, #673ab7); /* Softer gradient */
             display: flex;
             flex-direction: column;
             min-height: 100vh;
+            color: #fff;
         }
 
-        header {Akamanchicryptoasset@2001
+        /* Header */
+        header {
             background-color: #333;
             color: #fff;
             text-align: center;
             padding: 1em;
             font-size: 2em;
             text-shadow: 1px 1px 1px #000;
+            position: relative;
         }
 
         /* Home Icon Button */
@@ -33,7 +37,7 @@
             top: 10px;
             left: 10px;
             color: #FFFF00;
-            font-size: 0.7em; /* Smaller size */
+            font-size: 0.7em;
             text-decoration: none;
             transition: color 0.3s ease;
         }
@@ -42,32 +46,36 @@
             color: #bd646e;
         }
 
+        /* Section and Tool Subsections */
         section {
             padding: 2em;
             text-align: center;
-            margin: 10px;
-            border-radius: 15px;
-            background-color: #64c9bd;
-            box-shadow: 0 8px 12px rgba(0,0,0,0.1);
-            position: relative;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
         }
 
         .tool-subsection {
-            margin-bottom: 20px;
-            padding: 1em;
-            border-radius: 10px;
-            background-color: #fff;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
+            width: 220px;
+            padding: 1.5em;
+            border-radius: 15px;
+            background-color: #4a4a4a; /* Dark gray background */
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
         }
 
         .tool-subsection:hover {
-            transform: scale(1.02);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+            transform: scale(1.05);
+            box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.5), 0 0 15px #00e5ff, 0 0 25px #1de9b6; /* Glow effect */
         }
 
-        .tool-subsection a {
-            text-decoration: none;
+        /* Heading and Button Styling */
+        .tool-subsection h2 {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            color: #ffffff;
         }
 
         .tool-subsection button {
@@ -75,30 +83,30 @@
             font-size: 1em;
             border-radius: 5px;
             border: none;
-            background-color: #333;
-            color: #FFFF00;
+            background-color: #ff9800;
+            color: #fff;
             cursor: pointer;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
         }
 
         .tool-subsection button:hover {
-            background-color: #bd646e;
+            background-color: #ffb74d;
+            box-shadow: 0 0 10px #00e5ff, 0 0 15px #1de9b6; /* Subtle neon shadow */
         }
 
+        /* Footer */
         footer {
             background-color: #333;
             color: #64c9bd;
             text-align: center;
             padding: 1em;
-            width: 100%;
             font-size: 0.8em;
-            position: relative;
             margin-top: auto;
         }
 
         a {
             text-decoration: none;
-            color: #333;
+            color: #fff;
             transition: color 0.3s ease;
         }
 
@@ -106,6 +114,7 @@
             color: #bd646e;
         }
 
+        /* Responsive Styling */
         @media (max-width: 600px) {
             header {
                 font-size: 1.5em;
@@ -113,7 +122,7 @@
 
             section {
                 padding: 1.5em;
-                margin: 8px;
+                gap: 15px;
             }
 
             .tool-subsection button {
@@ -231,7 +240,6 @@
                 <button><strong>Visit BuildChatBot</strong></button>
             </a>
         </div>
-
     </section>
 
     <footer>
