@@ -3,200 +3,131 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Techtonics - AI Prompts</title>
+    <title>AI Techtonics - AI Tools</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
     <style>
-        html, body {
-            height: 100%; /* Ensure body takes full height */
+        /* Body and Background */
+        body {
+            font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #64c9bd; /* Background color */
-            color: #333;
-            font-family: 'Roboto', sans-serif;
-            scroll-behavior: smooth; /* Smooth scrolling */
+            background: linear-gradient(180deg, #3a7bd5, #673ab7); /* Softer gradient */
             display: flex;
             flex-direction: column;
+            min-height: 100vh;
+            color: #fff;
         }
 
+        /* Header */
         header {
             background-color: #333;
             color: #fff;
             text-align: center;
             padding: 1em;
             font-size: 2em;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            border-bottom: 2px solid #bd646e; /* Subtle accent */
+            text-shadow: 1px 1px 1px #000;
+            position: relative;
         }
 
+        /* Home Icon Button */
+        .home-button {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            color: #FFFF00;
+            font-size: 0.7em;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .home-button:hover {
+            color: #bd646e;
+        }
+
+        /* Section and Tool Subsections */
         section {
             padding: 2em;
-            margin: 20px auto;
-            border-radius: 10px;
-            width: 80%;
-            max-width: 900px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-            background-color: #ffffff; /* Section background */
+            text-align: center;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .tool-subsection {
+            width: 220px;
+            padding: 1.5em;
+            border-radius: 15px;
+            background-color: #4a4a4a; /* Dark gray background */
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
         }
 
-        section:hover {
-            transform: scale(1.02);
-            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+        .tool-subsection:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.5), 0 0 15px #00e5ff, 0 0 25px #1de9b6; /* Glow effect */
         }
 
+        /* Heading and Button Styling */
+        .tool-subsection h2 {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            color: #ffffff;
+        }
+
+        .tool-subsection button {
+            padding: 10px 20px;
+            font-size: 1em;
+            border-radius: 5px;
+            border: none;
+            background-color: #ff9800;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .tool-subsection button:hover {
+            background-color: #ffb74d;
+            box-shadow: 0 0 10px #00e5ff, 0 0 15px #1de9b6; /* Subtle neon shadow */
+        }
+
+        /* Footer */
         footer {
             background-color: #333;
-            color: #fff;
+            color: #64c9bd;
             text-align: center;
             padding: 1em;
-            width: 100%;
             font-size: 0.8em;
-            margin-top: auto; /* Ensures footer is pushed to the bottom */
+            margin-top: auto;
         }
 
         a {
             text-decoration: none;
-            color: #bd646e; /* Soft orange */
+            color: #fff;
             transition: color 0.3s ease;
         }
 
         a:hover {
-            color: #333;
+            color: #bd646e;
         }
 
-        .prompt-section, .instruction-section {
-            background-color: #f0f0f0;
-            border-radius: 10px;
-            padding: 1.5em;
-            margin-top: 20px;
-            text-align: left;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .prompt-section h2, .instruction-section h2 {
-            margin-top: 0;
-        }
-
-        .copy-button, .dropdown-button {
-            background-color: #333;
-            color: #fff;
-            border: none;
-            padding: 10px 15px;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-top: 10px;
-            transition: background-color 0.3s ease;
-        }
-
-        .copy-button:hover, .dropdown-button:hover {
-            background-color: #bd646e; /* Hover color */
-        }
-
-        .dropdown-button {
-            display: inline-block;
-            padding: 10px 20px;
-            margin-top: 20px;
-            text-decoration: none;
-            position: relative;
-            border: 1px solid transparent;
-        }
-
-        .dropdown-icon {
-            margin-left: 10px;
-            font-size: 0.9em;
-        }
-
-        .dropdown-content {
-            display: none;
-            margin-top: 20px;
-            text-align: left;
-            border-radius: 10px;
-            background-color: #f0f0f0;
-            padding: 1.5em;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .floating-images {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 20px;
-        }
-
-        .image-container {
-            position: relative;
-            overflow: hidden;
-            width: 150px;
-            height: 150px;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            margin: 0;
-            padding: 0;
-        }
-
-        .image-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-        }
-
-        .image-container:hover img {
-            transform: scale(1.1); /* Zoom effect on hover */
-        }
-
-        .download-button {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background-color: #333;
-            color: #fff;
-            border: none;
-            padding: 8px 12px;
-            border-radius: 50%;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-            display: none; /* Hidden by default */
-        }
-
-        .image-container:hover .download-button {
-            display: block; /* Show download button on hover */
-        }
-
-        .text-box {
-            margin-top: 10px;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            width: 100%;
-            box-sizing: border-box;
-            background-color: #ffffff; /* Background color for text-box */
-        }
-
-        @keyframes float {
-            0% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-            100% { transform: translateY(0); }
-        }
-
+        /* Responsive Styling */
         @media (max-width: 600px) {
             header {
                 font-size: 1.5em;
             }
 
             section {
-                width: 90%;
                 padding: 1.5em;
+                gap: 15px;
             }
 
-            .prompt-section, .instruction-section {
-                padding: 1em;
-            }
-
-            .copy-button, .dropdown-button, .download-button {
-                padding: 8px 12px;
+            .tool-subsection button {
+                font-size: 0.9em;
+                padding: 8px 16px;
             }
         }
     </style>
@@ -204,129 +135,123 @@
 <body>
 
     <header>
-        <h1>AI Techtonics - AI Prompts</h1>
+        <h1>AI Tools Section</h1>
+        <!-- Home Icon Button -->
+        <a href="index.html" class="home-button">
+            <i class="fas fa-home"></i>
+        </a>
     </header>
 
-    <section id="ai-prompts">
-        <h2>AI Prompts Section</h2>
-        <!-- Dropdown button to reveal the prompt details and images -->
-        <button class="dropdown-button" onclick="toggleDropdown()">Image Generation Prompt<span class="dropdown-icon">▼</span></button>
-        <div class="dropdown-content" id="dropdown-content">
-            <!-- Image Generation Prompt Section -->
-            <!-- New Logo Generating Prompt Section -->
-                <section id="logo-generating-prompt" class="prompt-section">
-                    <h2>Logo Generating Prompt's</h2>
-                    <div>
-                        <h3>Prompt Template:</h3>
-                        <p id="logo-prompt-template">Design a logo for [insert business name], a company in the [industry/niche] that serves [describe target audience, including age, gender, interests, and behaviors]. The brand’s core values are [insert brand values], and its mission is to [insert mission statement]. Our main competitors include [list competitors], but we differentiate ourselves through [mention unique aspects]. We envision the logo to have a [insert design style, e.g., modern, minimalist, or vintage] look, using [mention color palette] and [specify any font preferences]. The logo should incorporate elements such as [insert symbols/icons related to your business], and convey a sense of [insert emotions or tone, such as trust, innovation, creativity, etc.]. It will be used primarily for [state where the logo will be used, e.g., website, social media, packaging], and we want the overall design to reflect [insert any inspirational keywords or themes].
-                        </p>
-                        <button class="copy-button" onclick="copyToClipboard('logo-prompt-template')">Copy Prompt Template</button>
-            
-                        <h3>Prompt Example:</h3>
-                        <p id="logo-prompt-example">Design a logo for "TechInnovate Labs," a company in the cutting-edge tech industry that provides AI-driven solutions to startups and businesses. Our target audience includes tech enthusiasts, entrepreneurs, and companies focused on innovation, primarily aged 25-40. The brand’s core values are innovation, efficiency, and reliability, with a mission to deliver breakthrough technologies that transform industries. Our main competitors include IBM, OpenAI, and Microsoft, but we stand out by offering tailored, scalable solutions for small and medium businesses. We want the logo to have a sleek and futuristic style, using dark blues and metallic accents, with a preference for modern, sans-serif fonts. The logo should include a tech-related icon, such as a circuit, AI brain, or abstract geometric shapes, and evoke feelings of cutting-edge technology, trust, and expertise. It will be used on our website, app, and marketing materials, and should reflect themes of innovation, AI, and future-forward thinking.
-
-                        </p>
-                        <button class="copy-button" onclick="copyToClipboard('logo-prompt-example')">Copy Prompt Example</button>
-                    </div>
-                </section>
-
-                <section id="3d-animated-character-prompt" class="prompt-section">
-                    <h2>3D Animated Character Prompt</h2>
-                    <div>
-                        <h3>Prompt Template:</h3>
-                        <p id="3d-character-template">Create a 3D animated character of [Character Description]. The scene should be set in [Context and Setting], featuring [Key Elements and Details]. Use a [Color Scheme and Lighting] to convey the desired mood. Capture the character from [Perspective and Composition], ensuring the focus is on [Specific Element or Area]. The character should have [Style and Artistic Direction] to enhance its visual appeal. Include [Character Expressions and Actions] to add dynamism to the scene. [Additional Notes].</p>
-                        <button class="copy-button" onclick="copyToClipboard('3d-character-template')">Copy Prompt Template</button>
-            
-                        <h3>Prompt Example:</h3>
-                        <p id="3d-character-example">Generate a 3D animated cute character of a young boy with large, expressive eyes and a friendly, warm facial expression. He has thick, dark hair styled upward in a voluminous fashion. The boy is dressed in a light turquoise kurta with a saffron-orange and gold-striped sash draped over his shoulder, paired with loose-fitting saffron-colored pants. His traditional look is completed with visible brown sandals that add to the cultural attire. The character stands with his hands in a 'Namaste' gesture, and the background should be soft and natural, with forest-like elements to gently complement his peaceful and welcoming pose.</p>
-                        <button class="copy-button" onclick="copyToClipboard('3d-character-example')">Copy Prompt Example</button>
-                    </div>
-                </section>
-
-                <section id="image-generation-prompt" class="prompt-section">
-                    <h2>Image Generation Prompt</h2>
-                    <div>
-                        <h3>Prompt Template:</h3>
-                        <p id="prompt-template">Create an image of [Title/Subject]. The scene should be set in [Context and Setting], featuring [Key Elements and Details]. Use a [Color Scheme and Lighting] to convey the desired mood. Capture the scene from [Perspective and Composition], ensuring the focus is on [specific element or area]. The image should have a [Style and Artistic Direction] to enhance its visual appeal. Include subjects that are [Subject Expressions and Actions] to add dynamism to the scene. [Additional Notes].</p>
-                        <button class="copy-button" onclick="copyToClipboard('prompt-template')">Copy Prompt Template</button>
-                
-                        <h3>Prompt Example:</h3>
-                        <p id="prompt-example">Create an image of a serene mountain village at sunrise. The scene should be set in a quaint village nestled in a valley surrounded by towering snow-capped mountains. The village features rustic wooden cottages with smoke gently rising from their chimneys, cobblestone paths, and a small flowing river that reflects the early morning light. Use a color palette of soft pastels, including warm pinks, oranges, and cool blues, to depict the gentle morning light and the tranquil atmosphere. The lighting should create a soft glow over the mountains and illuminate the rooftops of the cottages, casting long shadows on the ground. Capture the scene from a low-angle perspective from the edge of the village, looking up towards the mountains with the village in the foreground and the sun just beginning to rise behind the peaks. The image should have a realistic, painterly style, emphasizing the natural beauty and peacefulness of the mountain setting. Include subjects that are villagers starting their day, some fetching water from the river, while others are tending to their gardens, adding a sense of daily life and community. Ensure the image has a high resolution to capture the intricate details of the mountain landscape and the texture of the village buildings.</p>
-                        <button class="copy-button" onclick="copyToClipboard('prompt-example')">Copy Prompt Example</button>
-                    </div>
-            
-                <!-- 3D Animated Character Prompt Section -->
-
-            </section>
-            
-
-
-            </section>
+    <section>
+        <div class="tool-subsection">
+            <h2>Bing AI</h2>
+            <a href="https://www.bing.com/chat?q=Microsoft+Copilot&FORM=hpcodx" target="_blank">
+                <button><strong>Visit Bing AI</strong></button>
+            </a>
         </div>
-    </section>
 
-    <!-- New Section for Chat GPT Customizable Prompt Templates -->
-    <section id="chat-gpt-instructions">
-        <h2>Chat GPT Customisable Prompt Templates</h2>
-        <!-- New Button to Reveal Custom Instructions -->
-        <button class="dropdown-button" onclick="toggleChatGPTInstructions()">SECRETS OF ChatGPT<span class="dropdown-icon">▼</span></button>
-        <div class="dropdown-content" id="chat-gpt-dropdown-content">
-            <div class="instruction-section">
-                <h4>Check our social media handles to know more about prompt templates</h4>
-                <h3>Custom Instructions</h3>
-                <p id="instruction-template">I am from India. I am a social media content script writer involved in writing scripts for content creator legends like Ali Abdaal and many more. I work for a firm that creates engaging technology and AI-related scripts for short-form video. My scripts use English and Hindi words, which are transliterations of Hindi in English. My scripts are always engaging and use words that create curiosity in the audience by using a scientific approach. My scripts also involve a biological approach where each word releases an optimum level of dopamine in the audience's body, creating curiosity to watch till the end. My target audience includes tech enthusiasts, general users, and content creators.</p>
-                <button class="copy-button" onclick="copyToClipboard('instruction-template')">Copy Instruction Template</button>
+        <div class="tool-subsection">
+            <h2>AI PPT MAKER</h2>
+            <a href="https://gamma.app/create" target="_blank">
+                <button><strong>Visit AI PPT Maker</strong></button>
+            </a>
+        </div>
 
-                <h3>How would you like ChatGPT to respond?</h3>
-                <p id="instruction-example">ChatGPT should compulsorily ask on which topic the user wishes to have the script written. Based on the topic, ChatGPT should suggest 10 eye-catching hooks that can be used at the start of the script. If the user is satisfied with the hooks, ChatGPT should proceed; otherwise, ChatGPT should ask the user to suggest a hook to be used in the script. ChatGPT should ask for examples of solutions. ChatGPT should ask for a detailed description of the problem and solution, or any use case scenario. ChatGPT should send the script in Hindi transliterated into English. The entire script should be optimized to make the audience stay and watch till the end of the video, ending with a call to action. Each word should release the optimum amount of dopamine to keep the audience engaged. The format for the script should include: Negative connotation with hook words saying what users never expected about the subject. Instant solution to the problem the general public faces. Creating aspiration by explaining the solution, including the use case scenario or example. Call to action. The tone of the script should be casual and humorous, incorporating entertaining elements to avoid boring the audience. Consider visual elements like text overlays, animations, or specific scenes to enhance the script's engagement. Include a feedback loop to review and revise the script based on initial feedback before finalizing it.</p>
-                <button class="copy-button" onclick="copyToClipboard('instruction-example')">Copy Instruction Example</button>
-            </div>
+        <div class="tool-subsection">
+            <h2>Adobe Animations</h2>
+            <a href="https://www.adobe.com/in/express/feature/video/animation/audio" target="_blank">
+                <button><strong>Visit Adobe Animations</strong></button>
+            </a>
+        </div>
 
-            <h2>CHAT GPT PROMPT TEMPLATE</h2>
-            <div class="prompt-section">
-                <h3>Prompt Template:</h3>
-                <p id="chat-gpt-template">"Assume the role of [R - Role: e.g., marketing expert, research assistant, etc.]. I need you to [I - Instructions: e.g., analyze, summarize, generate ideas, etc.]. My goal is to [G - Goal: e.g., increase website traffic, improve customer engagement, etc.]. Please focus on [H - Highlight: e.g., key metrics, target audience, etc.]. This is for [T - Target: e.g., a blog post, a product launch, etc.]. Provide a concise and actionable [output/response]."</p>
-                <button class="copy-button" onclick="copyToClipboard('chat-gpt-template')">Copy Prompt Template</button>
+        <div class="tool-subsection">
+            <h2>Runway ML</h2>
+            <a href="https://runwayml.com/" target="_blank">
+                <button><strong>Visit Runway ML</strong></button>
+            </a>
+        </div>
 
-                <h3>Example:</h3>
-                <p id="chat-gpt-example">"Assume the role of a social media marketing expert. I need you to generate ideas for a campaign to increase brand awareness. My goal is to reach a younger demographic. Please focus on Instagram and TikTok platforms. This is for a new product launch. Provide a concise and actionable plan."</p>
-                <button class="copy-button" onclick="copyToClipboard('chat-gpt-example')">Copy Prompt Example</button>
-            </div>
+        <div class="tool-subsection">
+            <h2>Pika Labs</h2>
+            <a href="https://discord.com/invite/pika" target="_blank">
+                <button><strong>Visit Pika Labs</strong></button>
+            </a>
+        </div>
 
+        <div class="tool-subsection">
+            <h2>MURF AI</h2>
+            <a href="https://murf.ai/" target="_blank">
+                <button><strong>Visit MURF AI</strong></button>
+            </a>
+        </div>
+
+        <div class="tool-subsection">
+            <h2>Vidnoz</h2>
+            <a href="https://www.vidnoz.com/" target="_blank">
+                <button><strong>Visit Vidnoz</strong></button>
+            </a>
+        </div>
+
+        <div class="tool-subsection">
+            <h2>Ideogram (image generator)</h2>
+            <a href="https://ideogram.ai/" target="_blank">
+                <button><strong>Visit Ideogram</strong></button>
+            </a>
+        </div>
+
+        <div class="tool-subsection">
+            <h2>Dexa AI</h2>
+            <a href="https://dexa.ai/" target="_blank">
+                <button><strong>Visit Dexa AI</strong></button>
+            </a>
+        </div>
+
+        <div class="tool-subsection">
+            <h2>Submagic(captions)</h2>
+            <a href="https://www.submagic.co/" target="_blank">
+                <button><strong>Visit Submagic</strong></button>
+            </a>
+        </div>
+
+        <div class="tool-subsection">
+            <h2>InVideo(text to video)</h2>
+            <a href="https://invideo.io/" target="_blank">
+                <button><strong>Visit InVideo</strong></button>
+            </a>
+        </div>
+
+        <div class="tool-subsection">
+            <h2>Humata AI - Report Reader</h2>
+            <a href="https://www.humata.ai/" target="_blank">
+                <button><strong>Visit Humata AI</strong></button>
+            </a>
+        </div>
+
+        <div class="tool-subsection">
+            <h2>GitaGPT</h2>
+            <a href="https://gitagpt.org/" target="_blank">
+                <button><strong>Visit GitaGPT</strong></button>
+            </a>
+        </div>
+
+        <div class="tool-subsection">
+            <h2>BuildChatBot</h2>
+            <a href="https://buildchatbot.ai/" target="_blank">
+                <button><strong>Visit BuildChatBot</strong></button>
+            </a>
+        </div>
+
+        <div class="tool-subsection">
+            <h2>Meshy AI (3d model creations)</h2>
+            <a href="https://www.meshy.ai/" target="_blank">
+                <button><strong>Visit Meshy AI</strong></button>
+            </a>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2024 AI Techtonics. All rights reserved.</p>
+        <p>© 2024 AI Techtonics. All rights reserved.</p>
     </footer>
-
-    <script>
-        function toggleDropdown() {
-            var content = document.getElementById('dropdown-content');
-            content.style.display = content.style.display === 'block' ? 'none' : 'block';
-        }
-
-        function toggleChatGPTInstructions() {
-            var content = document.getElementById('chat-gpt-dropdown-content');
-            content.style.display = content.style.display === 'block' ? 'none' : 'block';
-        }
-
-        function copyToClipboard(id) {
-            var text = document.getElementById(id).innerText;
-            navigator.clipboard.writeText(text).then(function() {
-                alert('Copied to clipboard');
-            }, function(err) {
-                alert('Failed to copy: ' + err);
-            });
-        }
-
-        function downloadImage(image) {
-            var link = document.createElement('a');
-            link.href = image;
-            link.download = image;
-            link.click();
-        }
-    </script>
 
 </body>
 </html>
